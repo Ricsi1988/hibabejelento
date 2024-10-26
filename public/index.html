@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibabejelentő</title>
+    <style>
+        body {
+            background-color: #add8e6; /* világoskék háttér */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* zöld gomb */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hibabejelentés</h1>
+        <form action="/submit" method="POST">
+            <label for="reporter">Bejelentő neve:</label>
+            <input type="text" id="reporter" name="reporter" required placeholder="Írd be a neved">
+
+            <label for="machine">Gép kiválasztása:</label>
+            <select id="machine" name="machine" required>
+                <option value="HNK22-1">HNK22-1</option>
+                <option value="HNK22-2">HNK22-2</option>
+                <option value="HNK22-3">HNK22-3</option>
+                <option value="HNK22-4">HNK22-4</option>
+                <option value="HNK22-5">HNK22-5</option>
+                <option value="HNK22-6">HNK22-6</option>
+                <option value="HNK22-7">HNK22-7</option>
+                <option value="HNK22-8">HNK22-8</option>
+                <option value="HNK22-9">HNK22-9</option>
+                <option value="HNK22-10">HNK22-10</option>
+                <option value="HNK22-11">HNK22-11</option>
+                <option value="HNK22-12">HNK22-12</option>
+                <option value="HNK22-13">HNK22-13</option>
+                <option value="HNK22-14">HNK22-14</option>
+                <option value="HNK22-15">HNK22-15</option>
+                <option value="HNK22-16">HNK22-16</option>
+                <option value="HNK22-17">HNK22-17</option>
+                <option value="HNK22-18">HNK22-18</option>
+                <option value="HNK22-19">HNK22-19</option>
+                <option value="HNK22-20">HNK22-20</option>
+                <option value="HNK22-21">HNK22-21</option>
+                <option value="HNK22-22">HNK22-22</option>
+                <option value="HNK22-23">HNK22-23</option>
+                <option value="HNK22-24">HNK22-24</option>
+                <option value="HNK22-25">HNK22-25</option>
+                <option value="Jetsky-01">Jetsky-01</option>
+                <option value="Jetsky-02">Jetsky-02</option>
+                <option value="Jetsky-03">Jetsky-03</option>
+                <option value="Jetsky-04">Jetsky-04</option>
+                <option value="Jetsky-05">Jetsky-05</option>
+                <option value="Jetsky-06">Jetsky-06</option>
+                <option value="Komi-01">Komi-01</option>
+                <option value="Komi-02">Komi-02</option>
+                <option value="Cserélő-01">Cserélő-01</option>
+                <option value="Cserélő-02">Cserélő-02</option>
+                <option value="Sopron">Sopron</option>
+                <option value="SOPRON">SOPRON</option>
+                <option value="Erjesztő-01">Erjesztő-01</option>
+                <option value="Szűrő-01">Szűrő-01</option>
+                <option value="Jetsky Pótló / 1.6">Jetsky Pótló / 1.6</option>
+                <option value="Komissió Magas">Komissió Magas</option>
+            </select>
+
+            <label for="description">Hiba leírása:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <input type="submit" value="Beküldés">
+        </form>
+    </div>
+</body>
+</html>

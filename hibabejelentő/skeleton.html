@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibabejelentő</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #add8e6; /* világoskék háttér */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Hibabejelentő</h2>
+        <form id="reportForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Név:</label>
+                <input type="text" class="form-control" id="name" placeholder="Add meg a neved" required>
+            </div>
+            <div class="form-group">
+                <label for="machine">Gép kiválasztása:</label>
+                <select class="form-control" id="machine" required>
+                    <option value="">Válassz gépet</option>
+                    <option value="HNK22-1">HNK22-1</option>
+                    <!-- További gép lehetőségek itt -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Hiba leírása:</label>
+                <textarea class="form-control" id="description" rows="4" placeholder="Írd le a hibát" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="commonIssues">Gyakori hibák:</label>
+                <select class="form-control" id="commonIssues" onchange="addIssueToDescription()">
+                    <option value="">Válassz egy gyakori hibát</option>
+                    <option value="Kerékprobléma">Kerékprobléma</option>
+                    <option value="Motorleégés">Motorleégés</option>
+                    <option value="Keréktörés">Keréktörés</option>
+                    <option value="Burkolatsérülés">Burkolatsérülés</option>
+                    <option value="Hátsó abroncs csere">Hátsó abroncs csere</option>
+                    <option value="Első abroncs csere">Első abroncs csere</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Bejelentés küldése</button>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("A hibabejelentést sikeresen elküldtük!");
+            document.getElementById("reportForm").reset();
+        }
+
+        function addIssueToDescription() {
+            const issueSelect = document.getElementById("commonIssues");
+            const description = document.getElementById("description");
+            const selectedIssue = issueSelect.value;
+
+            if (selectedIssue) {
+                description.value = selectedIssue;
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS és jQuery (Bootstrap működéséhez szükséges) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
